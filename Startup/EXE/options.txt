@@ -1,0 +1,3 @@
+..\..\..\..\Library\Device\Include;..\..\..\..\Library\StdDriver\inc
+
+..\..\..\..\..\ML51_BSP\Library\Startup\exe\hex2bin.exe  .\output\@L.hex
