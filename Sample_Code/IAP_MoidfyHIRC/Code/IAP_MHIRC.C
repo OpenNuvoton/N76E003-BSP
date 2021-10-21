@@ -30,7 +30,7 @@ void MODIFY_HIRC_166(void)				// Modify HIRC to 16.6MHz, more detail please see 
 				hircmap0 = RCTRIM0;
 				hircmap1 = RCTRIM1;
 				trimvalue16bit = ((hircmap0<<1)+(hircmap1&0x01));
-				trimvalue16bit = trimvalue16bit - 15;
+				trimvalue16bit = trimvalue16bit - 14;
 				hircmap1 = trimvalue16bit&0x01;
 				hircmap0 = trimvalue16bit>>1;
 				TA=0XAA;
@@ -49,7 +49,7 @@ void main(void)
 	CKDIV = 0x00;
 	P11_PushPull_Mode;
 	MODIFY_HIRC_166();
-	CKDIV = 0x50;					//HIRC devider 160
+	CKDIV = 50;					//HIRC devider 160
 	set_CLOEN;						//Check HIRC out wavefrom to confirm the HIRC modified
 	while(1);
 }

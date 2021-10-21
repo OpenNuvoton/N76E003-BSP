@@ -65,8 +65,12 @@ void main(void)
 		while((CKEN&SET_BIT0)==1);				//step4: check system clock switching OK or NG 	
 		clr_HIRCEN;
    
-////--------------------------------------------------------------------------------------------------------
-    
+////***** ECLK enable part *****               
+    set_EXTEN1;  
+    set_EXTEN0;
+		clr_OSC1;													//step3: switching system clock source if needed
+		set_OSC0;
+		clr_HIRCEN;
 /*
   Now Fsys = LIRC , LED tickle slowly.
 */
